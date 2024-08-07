@@ -1,0 +1,26 @@
+// app.get("/getdata", async (req, res) => {
+//   try {
+//     // Check for cached data
+//     const cachedData = await redisClient.get("data");
+
+//     if (cachedData) {
+//       // If data is found in cache, return it
+//       return res.status(200).json({ data: JSON.parse(cachedData) });
+//     }
+
+//     // If no cached data, make an API call
+//     const response = await axios.get("https://jsonplaceholder.typicode.com/todos");
+//     const data = response.data;
+
+//     // Cache the data in Redis with an expiration time (optional)
+//     await redisClient.set("data", JSON.stringify(data), { EX: 3600 }); // Cache expires in 1 hour
+
+//     return res.status(200).json(data);
+//   } catch (error) {
+//     return res.status(500).json({ error: error.message });
+//   }
+// });
+
+// app.listen(5000, () => {
+//   console.log("Server is running on http://localhost:5000");
+// });
